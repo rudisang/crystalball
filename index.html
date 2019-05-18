@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="app.min.css">
+    <link rel="stylesheet" href="fakeLoader.min.css">
+    <style>
+      .center { 
+  
+  position: relative;
+}
+
+.center div {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#rules{
+ background-image: url(back.jpg);
+ background-size: cover;
+}
+
+ .app-section ul li{
+   background-color: transparent;
+ }
+    </style>
+  </head>
+
+  <body>
+      <div class="fakeLoader"></div>
+    <div class="app-page" data-page="home">
+      <div class="app-topbar">
+        <div class="app-title">Rules</div>
+      </div>
+      <div class="app-content" id="rules">
+          <div class="app-section" style="background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);">
+              <ul class="app-list" style="background-color: transparent">
+                  <label >Animals</label>
+                  <li>Only enter yes or no questions.</li>
+                  <li>Keep your questions as short as possible.</li>
+                  <li></li>
+                  <li>Oranges</li>
+                </ul>
+            </div>
+        <div class="app-section">
+          <div class="app-button" data-target="page2" onclick="load()">Start</div>
+        </div>
+      </div>
+    </div>
+
+    <!--GAME PAGE-->
+    <div class="app-page" data-page="page2">
+        <div class="fakeLoader" id="loader"></div>
+      <div class="app-topbar" >
+        <div class="app-button left" data-back data-autotitle></div>
+        <div class="app-title" >Play</div>
+      </div>
+      <div class="app-content center" style="background-image: url(back.jpg);background-size:cover ">
+          
+        <div id="ansbox" class="app-section" style="margin-top:-180px;position:absolute;display:none;width:80%;background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);transition-timing-function: ease;">
+          <p id="ans"></p>
+        </div>
+
+        <div id="err" class="app-section" style="margin-top:-180px;position:absolute;display:none;width:80%;background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);">
+            <p id="msg">You Dumb Butt! am i supposed to read your mind? oh wait...</p>
+          </div>
+
+          <div id="err2" class="app-section" style="margin-top:-180px;position:absolute;display:none;width:80%;background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);">
+              <p id="msgb">Are you asking or telling me?</p>
+            </div>
+
+          <div class="app-section" style="width:90%;padding-bottom:60px;background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);">
+              <form name="input1" method="post">
+                  <input style="padding-top:50px;padding-bottom:50px;background-color: transparent" id="textfield" class="app-input" name="textfield" placeholder="Ask me anything. I dare you :)">
+              </form>
+              <div class="app-button" style="background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);color:black;width:90%;margin-top:50px" onClick="getAnswers()">Send</div>
+            </div>
+
+            <script language="JavaScript">
+
+      
+                function getAnswers() {
+                
+                time = new Date()
+                randominteger = time.getSeconds()
+                let text = document.getElementById('textfield');
+                let box = document.getElementById('ansbox')
+                let err = document.getElementById('err');
+                let errb = document.getElementById('err2');
+                let ans = document.getElementById('ans');
+                let msgb = document.getElementById('msgb');
+               
+                box.style.display = 'none';
+                if (text.value == "") { 
+                err.style.display = 'block';
+                setTimeout(function(){ err.style.display ="none" }, 3000);
+                return
+                }else if(text.value.indexOf("?") == -1){
+                  
+                  time = new Date()
+    randominteger = time.getSeconds()
+    if (randominteger <= 3) answer = "Are you asking or telling me?"
+    if ((randominteger >= 4) && (randominteger <= 6)) answer = "I don't see a question mark there so like... "
+    if ((randominteger >= 7) && (randominteger <= 9)) answer = "Were you asking or telling? "
+    if ((randominteger >= 10) && (randominteger <= 12)) answer = "I know you were taught how to punctuate"
+    if ((randominteger >= 13) && (randominteger <= 15)) answer = "Lol! punctuate you dumbass!"
+    if ((randominteger >= 16) && (randominteger <= 18)) answer = "Riiight! were you asking or..."
+    if ((randominteger >= 19) && (randominteger <= 21)) answer = "hhhm? mkay.. I guess your dumb ass forgot the question mark"
+    if ((randominteger >= 22) && (randominteger <= 24)) answer = "When you ask a question use a question mark you idiot."
+    if ((randominteger >= 25) && (randominteger <= 27)) answer = "Do you know how question marks work? just asking..."
+    if ((randominteger >= 28) && (randominteger <= 30)) answer = "Dude ask me a question and stop telling me stuff."
+    if ((randominteger >= 31) && (randominteger <= 33)) answer = "Did you get drunk last weekend? or maybe you just weren't taught how to punctuate."
+    if ((randominteger >= 34) && (randominteger <= 36)) answer = "Forget about it. I said ask me a question not tell me something"
+    if ((randominteger >= 37) && (randominteger <= 39)) answer = "Yeah neh. ??? those are called question marks. Dumb ass"
+    if ((randominteger >= 40) && (randominteger <= 42)) answer = "Kindly use a question mark so i know what the hell it is you are asking."
+    if ((randominteger >= 43) && (randominteger <= 45)) answer = "*sigh* Try asking me something this time."
+    if ((randominteger >= 46) && (randominteger <= 48)) answer = "Ask me a question. idiot.. ?????"
+    if ((randominteger >= 49) && (randominteger <= 51)) answer = "i can't tell if you are asking or telling me."
+    if ((randominteger >= 52) && (randominteger <= 54)) answer = "nxe ask. Not tell."
+    if ((randominteger >= 55) && (randominteger <= 57)) answer = "Hey! My name is question mark. Please use me"
+    if ((randominteger >= 58) && (randominteger <= 60)) answer = "useless! ?use a question mark."
+    msgb.innerHTML = answer;
+                  errb.style.display = 'block';
+                setTimeout(function(){ errb.style.display ="none" }, 6000);
+
+                }else{
+                
+                if (randominteger <= 3) answer="Did you really think so? Hahaha, I'm laughing now at your pitiful chances."
+                if ((randominteger >= 4) && (randominteger <= 6)) answer ="Yeah, it it's got a 65% chance of happening."
+                if ((randominteger >= 7) && (randominteger <= 9)) answer ="Oh come on! No way!"
+                if ((randominteger >= 10) && (randominteger <= 12)) answer ="As sure as I'm made of glass, this is likely to happen."
+                if ((randominteger >= 13) && (randominteger <= 15)) answer ="Why are you asking A CRYSTAL BALL? Do you really believe the answers?"
+                if ((randominteger >= 16) && (randominteger <= 18)) answer ="Give me a break, give me a break, break me off a piece of that NO!"
+                if ((randominteger >= 19) && (randominteger <= 21)) answer ="Good chances lie on the horizon."
+                if ((randominteger >= 22) && (randominteger <= 24)) answer ="Ask me again, I am restless and overworked."
+                if ((randominteger >= 25) && (randominteger <= 27)) answer ="Do you know how the Crystal Ball works? There's your answer."
+                if ((randominteger >= 28) && (randominteger <= 30)) answer ="As the sun is hot, your answer is YES."
+                if ((randominteger >= 31) && (randominteger <= 33)) answer ="Did you get drunk last weekend? There's your answer."
+                if ((randominteger >= 34) && (randominteger <= 36)) answer ="Forget about it"
+                if ((randominteger >= 37) && (randominteger <= 39)) answer ="Yeah, it could happen. 80% chance."
+                if ((randominteger >= 40) && (randominteger <= 42)) answer ="Hitler has a better chance of raising from the dead."
+                if ((randominteger >= 43) && (randominteger <= 45)) answer ="If you really think so, then it shall be."
+                if ((randominteger >= 46) && (randominteger <= 48)) answer ="Who said ambiguous answers were bad? Not me, so YES!"
+                if ((randominteger >= 49) && (randominteger <= 51)) answer ="You think I'm going to answer that after a day of hard work? Ask again later."
+                if ((randominteger >= 52) && (randominteger <= 54)) answer ="If you own a pet, yes. Otherwise, no."
+                if ((randominteger >= 55) && (randominteger <= 57)) answer ="The sun will rise in the east and set in the west. Thank you Captain Obvious. YES!"
+                if ((randominteger >= 58) && (randominteger <= 60)) answer ="I'm laughing hard, very hard. You'd better ask again."
+                
+                
+                ans.innerHTML = answer;
+
+               box.style.display = 'block';
+               box.style.transition = '1s';
+               text.value=" ";
+                }
+                
+                }
+
+                function load(){
+                  var loader = document.getElementById('loader');
+        loader.style.display = 'block';
+                }
+
+
+                
+                </script>
+      </div>
+    </div>
+    <!--END GAME PAGE-->
+
+    <script src="zepto.js"></script>
+    <script src="app.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="fakeLoader.min.js"></script>
+        
+        <script>
+            $(document).ready(function () {
+                $.fakeLoader({
+                    bgColor: '#FDCCB3',
+                    spinner: 'spinner2'
+                });
+            });
+        </script>
+    <script>
+      App.controller('home', function (page) {
+        // put stuff here
+      });
+
+      App.controller('page2', function (page) {
+      });
+
+      try {
+        App.restore();
+      } catch (err) {
+        App.load('home');
+      }
+    </script>
+  </body>
+</html>

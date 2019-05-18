@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget id="com.example.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+ 
+    <!-- versionCode is Android only -->
+    <!-- version is in major.minor.patch format --> 
+    <name>Crystal Ball</name>
+ 
+    <description>
+        An example for phonegap build app which wont show up in the playstore. 
+    </description>
+
+    <author href="https://YourWebsite.com" email="yourEmail@goesHere.com">
+        Rudisang Morake
+    </author>
+
+        <feature name="http://api.phonegap.com/1.0/network" />
+<feature name="http://api.phonegap.com/1.0/notification" />
+<feature name="http://api.phonegap.com/1.0/geolocation" />
+<feature name="http://api.phonegap.com/1.0/device" />
+
+<platform name="android">
+<preference value="true" name="SplashMaintainAspectRatio"/>
+    <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
+    <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
+    <preference name="fullscreen"                 value="true" />  
+    <preference name="SplashScreenDelay" value="5000"/>
+
+<icon src="res/icon/android/ldpi.png" density="ldpi"/>
+<icon src="res/icon/android/mdpi.png" density="mdpi"/>
+<icon src="res/icon/android/hdpi.png" density="hdpi"/>
+<icon src="res/icon/android/xhdpi.png" density="xhdpi"/>
+<icon src="res/icon/android/xxhdpi.png" density="xxhdpi"/>
+<icon src="res/icon/android/xxxhdpi.png" density="xxxhdpi"/>
+ 
+    <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi" />
+    <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi" />
+    <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi" />
+    <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi" />
+</platform>
+
+
+<splash src="splash.png" />
+
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="true" />
+    <preference name="orientation" value="portrait" />
+
+    <plugin name="cordova-plugin-splashscreen" source="npm" />
+    <plugin name="cordova-plugin-whitelist" source="npm" />
+    
+</widget>
